@@ -1,0 +1,8 @@
+.search-view {
+  display: block;
+  height: 100%;
+}
+
+.search-view .triple:hover {
+  background-color: #969696
+}

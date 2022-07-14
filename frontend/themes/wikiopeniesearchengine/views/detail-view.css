@@ -1,0 +1,35 @@
+.detail-view {
+    display: block;
+    height: 100%;
+}
+
+.detail-view vaadin-grid {
+    height: 100%;
+    line-height: var(--lumo-line-height-m);
+    white-space:normal;
+}
+
+.detail-view vaadin-grid,
+.detail-view vaadin-grid-cell-content {
+    background-color: var(--lumo-contrast-10pct);
+    white-space:normal;
+}
+
+.detail-view .card {
+    background-color: var(--lumo-base-color);
+    border-radius: var(--lumo-border-radius);
+    box-shadow: var(--lumo-box-shadow-xs);
+    padding: calc(var(--lumo-space-s) * 1.5) var(--lumo-space-m);
+}
+
+.detail-view .subject {
+    background-color: #66A8FF;
+}
+
+.detail-view .predicate {
+    background-color: #66A8FF;
+}
+
+.detail-view .object {
+    background-color: #66A8FF;
+}
