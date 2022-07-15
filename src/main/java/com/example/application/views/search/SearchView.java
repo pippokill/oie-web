@@ -94,12 +94,20 @@ public class SearchView extends Div implements AfterNavigationObserver {
         vl.removeAll();
         SearchTriple[] searchTriple = ServiceCall.searchTriple(sb.toString().trim());
         List<List<SearchTriple>> ll = TripleUtils.collapseAndSort(searchTriple, t -> t.getPredicate().getSpan());
+        Map<String,String> docs=new HashMap<>();
         for (List<SearchTriple> l : ll) {
             if (!l.isEmpty()) {
                 Span predSpan = new Span(l.get(0).getPredicate().getSpan() + " (" + l.size() + ")");
                 VerticalLayout vlt = new VerticalLayout();
                 for (SearchTriple st : l) {
-                    Span ts = new Span(st.getSubject().getSpan() + " " + st.getPredicate().getSpan() + " " + st.getObject().getSpan() + " (" + st.getScore() + ")");
+                    String doctitle=docs.get(st.getDocid());
+                    if (doctitle==null) {
+                        doctitle=ServiceCall.getPassageById(st.getDocid()).getTitle();
+                        docs.put(st.getDocid(),doctitle);
+                    }
+                    //Span ts = new Span(st.getSubject().getSpan() + " " + st.getPredicate().getSpan() + " " + st.getObject().getSpan() + " (" + st.getScore() + ")");
+                    Span ts = new Span(st.getSubject().getSpan() + " " + st.getPredicate().getSpan() + " " + st.getObject().getSpan() + " (" + doctitle + ")");
+                    ts.addClassName("triple");
                     ts.addClickListener(e -> {
                         Map<String, List<String>> parametersDetail = new HashMap();
                         parametersDetail.put("docid", Arrays.asList(new String[]{st.getDocid()}));
