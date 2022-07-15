@@ -23,7 +23,7 @@ You can now also attach breakpoints in code for debugging purposes, by clicking 
 - `views` package in `src/main/java` contains the server-side Java views of your application.
 - `views` folder in `frontend/` contains the client-side JavaScript views of your application.
 
-## Vaadin Info?
+## Vaadin Info
 
 [vaadin.com](https://vaadin.com) has lots of material to help you get you started:
 
