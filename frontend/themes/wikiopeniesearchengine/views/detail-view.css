@@ -33,3 +33,7 @@
 .detail-view .object {
     background-color: #66A8FF;
 }
+
+.detail-view .bold {
+    font-weight: bold;
+}

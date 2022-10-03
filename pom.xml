@@ -6,7 +6,7 @@
     <artifactId>wikiopeniesearchengine</artifactId>
     <name>WikiOIE Search Engine</name>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <java.version>0</java.version>

@@ -55,7 +55,7 @@ public class SearchView extends Div implements AfterNavigationObserver {
                 parameters.put("obj", Arrays.asList(new String[]{obj.getValue()}));
             }
             searchBut.getUI().ifPresent(ui -> ui.navigate(
-                    "search2",
+                    "search",
                     new QueryParameters(parameters)));
         });
         searchBut.addClickShortcut(Key.ENTER);
@@ -90,6 +90,10 @@ public class SearchView extends Div implements AfterNavigationObserver {
             }
             sb.append(")");
         }
+        
+        subj.setValue((parameters.get("subj") != null && !parameters.get("subj").isEmpty()) ? parameters.get("subj").get(0) : "");
+        pred.setValue((parameters.get("pred") != null && !parameters.get("pred").isEmpty()) ? parameters.get("pred").get(0) : "");
+        obj.setValue((parameters.get("obj") != null && !parameters.get("obj").isEmpty()) ? parameters.get("obj").get(0) : "");
 
         vl.removeAll();
         SearchTriple[] searchTriple = ServiceCall.searchTriple(sb.toString().trim());

@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  */
 public class ServiceCall {
 
-    private static final String SERVICE_URL = "http://localhost:8180";
+    private static final String SERVICE_URL = "http://193.204.187.101:8180";
 
     public static SearchTriple[] searchTriple(String query) {
         try {
