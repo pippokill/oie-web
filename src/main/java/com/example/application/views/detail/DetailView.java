@@ -105,7 +105,7 @@ public class DetailView extends Div implements AfterNavigationObserver {
             if (idx > 0) {
                 url = doc.getTitle().substring(0, idx) + "/" + doc.getTitle().substring(idx + 1);
             }
-            getUI().get().getPage().open("http://193.204.187.101:8180/search/download?id=" + url, doc.getTitle());
+            getUI().get().getPage().open("http://193.204.187.101:8083/search/download?id=" + url, doc.getTitle());
         });
         docL.add(downloadBut);
 
